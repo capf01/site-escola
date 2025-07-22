@@ -9,11 +9,12 @@
           <h3>Informações de Contato</h3>
           <div class="info-item">
             <i class="fas fa-map-marker-alt"></i>
-            <p>Rua da Educação, 123 - Bairro do Saber, Cidade - SP</p>
+            <p>AV. Oscar Borel, 207 Bairro Compensa II</p>
           </div>
           <div class="info-item">
-            <i class="fas fa-phone-alt"></i>
-            <p>(11) 1234-5678</p>
+            <i class="fas fa-phone-alt"></i>npm run build
+npm run deploy
+            <p>(92) 9205-0303</p>
           </div>
           <div class="info-item">
             <i class="fas fa-envelope"></i>
@@ -21,7 +22,7 @@
           </div>
           <div class="info-item">
             <i class="fas fa-clock"></i>
-            <p>Segunda a Sexta: 7h às 19h</p>
+            <p>Segunda a Sábado: 8h às 18h</p>
           </div>
         </div>
         

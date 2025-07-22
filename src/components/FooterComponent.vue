@@ -19,8 +19,8 @@
         
         <div class="footer-contact">
           <h4>Contato</h4>
-          <p><i class="fas fa-map-marker-alt"></i> Rua da Educação, 123</p>
-          <p><i class="fas fa-phone-alt"></i> (11) 1234-5678</p>
+          <p><i class="fas fa-map-marker-alt"></i> AV. Oscar Borel, 207 Bairro Compensa II</p>
+          <p><i class="fas fa-phone-alt"></i> (92) 9205-0303</p>
           <p><i class="fas fa-envelope"></i> contato@escolamastersucesso.com.br</p>
         </div>
         
@@ -36,7 +36,7 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2023 Escola Master Sucesso. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Escola Master Sucesso. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
