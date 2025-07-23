@@ -20,6 +20,7 @@
         <div class="footer-contact">
           <h4>Contato</h4>
           <p><i class="fas fa-map-marker-alt"></i> AV. Oscar Borel, 207 Bairro Compensa II</p>
+          <p><i class="fas fa-map-marker-alt"></i> AV. Francisco Queiroz, 54 Bairro Manoa</p>
           <p><i class="fas fa-phone-alt"></i> (92) 9205-0303</p>
           <p><i class="fas fa-envelope"></i> contato@escolamastersucesso.com.br</p>
         </div>
@@ -27,10 +28,8 @@
         <div class="footer-social">
           <h4>Siga-nos</h4>
           <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon-circle"><img src="@/assets/images/facebook.jpeg" alt="Facebook"></a>
+            <a href="#" class="social-icon-circle"><img src="@/assets/images/instagram.png" alt="Instagram"></a>
           </div>
         </div>
       </div>
@@ -126,9 +125,10 @@ export default {
 .social-icons {
   display: flex;
   gap: 15px;
+  align-items: center;
 }
 
-.social-icons a {
+.social-icon-circle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,13 +136,20 @@ export default {
   height: 40px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  color: white;
   transition: all 0.3s ease;
+  overflow: hidden; /* Garante que a imagem não ultrapasse os limites do círculo */
 }
 
-.social-icons a:hover {
+.social-icon-circle:hover {
   background-color: var(--primary-color);
   transform: translateY(-3px);
+}
+
+.social-icon-circle img {
+  width: 37px;
+  height: 37px;
+  object-fit: cover;
+  border-radius: 50%; /* Torna a imagem circular */
 }
 
 .footer-bottom {

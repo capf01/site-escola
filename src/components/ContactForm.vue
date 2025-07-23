@@ -11,10 +11,18 @@
             <i class="fas fa-map-marker-alt"></i>
             <p>AV. Oscar Borel, 207 Bairro Compensa II</p>
           </div>
+           <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>AV. Francisco Queiroz, 54 Bairro Manoa</p>
+          </div>
+            <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>AV. av.das Oliveiras,120 bairro novo israel</p>
+          </div>
           <div class="info-item">
-            <i class="fas fa-phone-alt"></i>npm run build
-npm run deploy
-            <p>(92) 9205-0303</p>
+            <i class="fas fa-phone-alt"></i>
+            <p>(92) 99205-0303</p>
+            <p>(92) 98409-3140</p>
           </div>
           <div class="info-item">
             <i class="fas fa-envelope"></i>
@@ -44,7 +52,7 @@ npm run deploy
             <input type="text" id="student-name" v-model="form.studentName">
           </div>
           <div class="form-group">
-            <label for="grade">Série de Interesse</label>
+            <label for="grade">Curso de Interesse</label>
             <select id="grade" v-model="form.grade">
               <option value="">Selecione</option>
               <option value="Atendente de Farmácia">Atendente de Farmácia</option>
@@ -89,7 +97,7 @@ export default {
       return phone.replace(/\D/g, '');
     },
     submitForm() {
-      const phoneNumber = '5592984713059';
+      const phoneNumber = '5592050303';
       
       // Monta a mensagem para o WhatsApp
       let whatsappMessage = `Olá, Escola Master Sucesso! Gostaria de mais informações:\n\n`;

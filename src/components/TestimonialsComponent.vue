@@ -31,13 +31,13 @@ export default {
         {
           quote: "A Escola Master Sucesso transformou o meu filho. Ele desenvolveu não apenas conhecimento profissional, mas também habilidades sociais e emocionais que o prepararam para a vida.",
           name: "Ana Silva",
-          role: "Mãe do aluno Pedro, 8º ano",
+          role: "Mãe do aluno Pedro",
           avatar: require('@/assets/images/team1.png')
         },
         {
           quote: "Estudar na Master Sucesso foi a melhor decisão que tomei. Os professores são incríveis e a metodologia me preparou não só para o trabalho, mas para pensar criticamente.",
           name: "Carlos Oliveira",
-          role: "Ex-aluno, aprovado em Medicina",
+          role: "Ex-aluno",
           avatar: require('@/assets/images/team2.png')
         },
         {
