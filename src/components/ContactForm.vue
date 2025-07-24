@@ -11,18 +11,13 @@
             <i class="fas fa-map-marker-alt"></i>
             <p>AV. Oscar Borel, 207 Bairro Compensa II</p>
           </div>
-           <div class="info-item">
+          <div class="info-item">
             <i class="fas fa-map-marker-alt"></i>
             <p>AV. Francisco Queiroz, 54 Bairro Manoa</p>
           </div>
-            <div class="info-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <p>AV. av.das Oliveiras,120 bairro novo israel</p>
-          </div>
           <div class="info-item">
-            <i class="fas fa-phone-alt"></i>
-            <p>(92) 99205-0303</p>
-            <p>(92) 98409-3140</p>
+            <i class="fas fa-map-marker-alt"></i>
+            <p>AV. das Oliveiras,120 Bairro Novo Israel</p>
           </div>
           <div class="info-item">
             <i class="fas fa-envelope"></i>
@@ -31,6 +26,20 @@
           <div class="info-item">
             <i class="fas fa-clock"></i>
             <p>Segunda a Sábado: 8h às 18h</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <div class="info-content phone-numbers">
+              <div class="phone-line">
+                <p>(92) 99205-0303</p>
+              </div>
+              <div class="phone-line">
+                <p>(92) 98409-3140</p>
+              </div>
+              <div class="phone-line">
+                <p>(92) 99388-0303</p>
+              </div>
+            </div>
           </div>
         </div>
         
@@ -59,7 +68,7 @@
               <option value="Operador de Tecnologia Essencial">Operador de Tecnologia Essencial</option>
               <option value="Operador de Tecnologia Avançado">Operador de Tecnologia Avançado</option>
               <option value="Jovem Aprendiz">Jovem Aprendiz</option>
-              1<option value="Designer Gráfico">Designer Gráfico</option>
+              <option value="Designer Gráfico">Designer Gráfico</option>
               <option value="Gestão Empresarial">Gestão Empresarial</option>
             </select>
           </div>
@@ -93,13 +102,11 @@ export default {
   },
   methods: {
     formatPhoneNumber(phone) {
-      // Remove tudo que não é dígito
       return phone.replace(/\D/g, '');
     },
     submitForm() {
       const phoneNumber = '5592050303';
       
-      // Monta a mensagem para o WhatsApp
       let whatsappMessage = `Olá, Escola Master Sucesso! Gostaria de mais informações:\n\n`;
       whatsappMessage += `*Nome:* ${this.form.name}\n`;
       whatsappMessage += `*E-mail:* ${this.form.email}\n`;
@@ -116,21 +123,15 @@ export default {
       whatsappMessage += `*Mensagem:* ${this.form.message}\n\n`;
       whatsappMessage += `Aguardo retorno, obrigado!`;
       
-      // Codifica a mensagem para URL
       const encodedMessage = encodeURIComponent(whatsappMessage);
-      
-      // Verifica se é mobile para abrir o WhatsApp apropriadamente
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       
       if (isMobile) {
-        // Abre no app do WhatsApp
         window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`);
       } else {
-        // Abre no WhatsApp Web para desktop
         window.open(`https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`);
       }
       
-      // Reseta o formulário
       this.resetForm();
     },
     resetForm() {
@@ -149,25 +150,62 @@ export default {
 
 <style scoped>
 .contact {
-  padding: 100px 0;
+  padding: 60px 0;
   background-color: white;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--gray-color);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  padding: 0 15px;
 }
 
 .contact-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 50px;
-  margin-top: 50px;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
 }
 
 .contact-info {
   background-color: var(--light-color);
-  padding: 30px;
+  padding: 25px;
   border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .contact-info h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 20px;
   color: var(--dark-color);
 }
@@ -175,23 +213,33 @@ export default {
 .info-item {
   display: flex;
   gap: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  align-items: flex-start;
 }
 
 .info-item i {
   color: var(--primary-color);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  min-width: 20px;
   margin-top: 3px;
 }
 
 .info-item p {
   color: var(--dark-color);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.phone-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .form-group {
@@ -203,6 +251,7 @@ export default {
 .form-group label {
   font-weight: 600;
   color: var(--dark-color);
+  font-size: 0.95rem;
 }
 
 .form-group input,
@@ -212,8 +261,14 @@ export default {
   border: 1px solid var(--gray-color);
   border-radius: 6px;
   font-family: inherit;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
 }
 
 .form-group input:focus,
@@ -221,16 +276,114 @@ export default {
 .form-group select:focus {
   outline: none;
   border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
 }
 
-button[type="submit"] {
-  align-self: flex-start;
-  display: flex;
+.btn {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
 }
 
 .btn-primary i {
   font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .contact-container {
+    gap: 20px;
+  }
+  
+  .contact-info {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 50px 0;
+  }
+  
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .info-item i {
+    margin-top: 0;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 10px 12px;
+  }
 }
 </style>

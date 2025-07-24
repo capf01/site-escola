@@ -6,6 +6,7 @@
       <FeaturesSection />
       <TestimonialsComponent/>
       <ContactForm />
+      <WhatsAppFloat />
     </main>
     <FooterComponent />
   </div>
@@ -18,6 +19,7 @@ import FeaturesSection from './components/FeaturesSection.vue'
 import ContactForm from './components/ContactForm.vue'
 import FooterComponent from './components/FooterComponent.vue'
 import TestimonialsComponent from './components/TestimonialsComponent.vue'
+import WhatsAppFloat from './components/WhatsAppFloat.vue'
 export default {
   name: 'App',
   components: {
@@ -26,6 +28,7 @@ export default {
     FeaturesSection,
     ContactForm,
     TestimonialsComponent,
+    WhatsAppFloat,
     FooterComponent
   }
 }
@@ -54,9 +57,21 @@ body {
   line-height: 1.6;
   color: var(--dark-color);
   background-color: var(--light-color);
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -70,6 +85,7 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
+  text-align: center;
 }
 
 .btn-primary {
@@ -95,7 +111,7 @@ body {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -115,10 +131,70 @@ body {
 }
 
 .section-subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--gray-color);
   text-align: center;
   max-width: 700px;
   margin: 0 auto 3rem;
+  padding: 0 15px;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .section-title::after {
+    width: 60px;
+    height: 3px;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
 }
 </style>
