@@ -59,7 +59,7 @@ export default {
 
 <style scoped>
 .footer {
-  background-color: var(--dark-color);
+  background-color: #011335;
   color: white;
   padding: 50px 0 20px;
 }

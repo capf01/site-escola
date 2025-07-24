@@ -105,7 +105,7 @@ export default {
       return phone.replace(/\D/g, '');
     },
     submitForm() {
-      const phoneNumber = '5592050303';
+      const phoneNumber = '559292050303';
       
       let whatsappMessage = `Olá, Escola Master Sucesso! Gostaria de mais informações:\n\n`;
       whatsappMessage += `*Nome:* ${this.form.name}\n`;
